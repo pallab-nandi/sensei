@@ -3,5 +3,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = {
-  token: process.env.TOKEN
+  token: process.env.TOKEN,
+  client_id: process.env.Client_ID
 }
