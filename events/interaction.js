@@ -1,4 +1,5 @@
 const { Events } = require('discord.js');
+const colors = require('colors');
 
 module.exports = {
   name: Events.InteractionCreate,
@@ -8,7 +9,7 @@ module.exports = {
     const command = interaction.client.commands.get(interaction.commandName);
 
     if (!command) {
-      console.log(`No command matching ${interaction.commandName} was found!`);
+      console.log(`No command matching ${interaction.commandName} was found!`.yellow);
       return;
     }
 
