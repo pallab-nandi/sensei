@@ -12,7 +12,7 @@ const guildSchema = new mongoose.Schema({
   autoRoles: {
     type: String
   },
-  ignoreRoles: {
+  modRoles: {
     type: String
   },
   banRoles: {

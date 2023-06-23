@@ -12,7 +12,7 @@ module.exports = {
       guildID: guild.id,
       guildName: guild.name,
       autoRoles: 'None',
-      ignoreRoles: 'None',
+      modRoles: 'None',
       banRoles: 'None',
       videoChannel: 'None',
       videoGracePeriod: 'None',
