@@ -8,7 +8,8 @@ const { connect } = require('./db/db.connection');
 
 const client = new Client({
   intents: [
-    GatewayIntentBits.Guilds
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMembers
   ]
 });
 
