@@ -10,8 +10,19 @@ module.exports = {
     const avatarURL = `https://cdn.discordapp.com/avatars/${memberId}/${memberAvatar}.jpeg`;
 
     const guild = await db.guild.findOne({ guildID: member.guild.id });
+
+    if (guild.welcomeChannel === 'None') return;
+
+    //auto role added on joining the server
+    if (guild.autoRoles !== 'None') {
+      const autoRoleId = guild.autoRoles.slice(3, guild.autoRoles.length - 1);
+      const autoRole = await member.guild.roles.cache.get(autoRoleId);
+
+      await member.roles.add(autoRole);
+    }
+
     const channelID = guild.welcomeChannel.slice(2, guild.welcomeChannel.length - 1);
-    const channel = member.guild.channels.cache.get(channelID);
+    const channel = await member.guild.channels.cache.get(channelID);
 
     const contentMsg = `**Welcome <@${memberId}> to the world of Fullstack Development! Prepare to unlock your creativity and build remarkable web applications. This journey will empower you with essential skills, from front-end design to back-end programming. Join us as we explore the exciting realm of Fullstack Development together!**\n`;
 
