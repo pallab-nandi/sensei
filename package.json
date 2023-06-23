@@ -20,7 +20,8 @@
   "homepage": "https://github.com/pallab-nandi/sensei#readme",
   "dependencies": {
     "discord.js": "^14.11.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "mongoose": "^7.3.1"
   },
   "devDependencies": {
     "colors": "^1.4.0",

@@ -1,8 +1,10 @@
 const fs = require('node:fs');
 const path = require('node:path');
-const { Client, Events, GatewayIntentBits, Collection } = require('discord.js');
+const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const { token } = require('./configs/token.config');
+
 const colors = require('colors');
+const { connect } = require('./db/db.connection');
 
 const client = new Client({
   intents: [
@@ -46,5 +48,5 @@ for (const file of eventFiles) {
   }
 }
 
-
+connect();
 client.login(token);
