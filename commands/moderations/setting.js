@@ -116,49 +116,57 @@ module.exports = {
 
       const channel = interaction.options.getChannel('target');
       await db.guild.findOneAndUpdate({ guildID }, { welcomeChannel: `${channel}` });
-      await interaction.reply(`:white_check_mark: Welcome channel set to ${channel} successfully!`);
+      const reply = await interaction.reply({ content: `Welcome channel set to ${channel} successfully!`, fetchReply: true });
+      reply.react('✅');
 
     } else if (interaction.options.getSubcommand() === 'notification_channel') {
 
       const channel = interaction.options.getChannel('target');
       await db.guild.findOneAndUpdate({ guildID }, { notificationChannel: `${channel}` });
-      await interaction.reply(`:white_check_mark: Notification channel set to ${channel} successfully!`);
+      const reply = await interaction.reply({ content: `Notification channel set to ${channel} successfully!`, fetchReply: true });
+      reply.react('✅');
 
     } else if (interaction.options.getSubcommand() === 'study_material_channel') {
 
       const channel = interaction.options.getChannel('target');
       await db.guild.findOneAndUpdate({ guildID }, { studyMaterialChannel: `${channel}` });
-      await interaction.reply(`:white_check_mark: Notes sharing channel set to ${channel} successfully!`);
+      const reply = await interaction.reply({ content: `Notes sharing channel set to ${channel} successfully!`, fetchReply: true });
+      reply.react('✅');
 
     } else if (interaction.options.getSubcommand() === 'video_channel') {
 
       const channel = interaction.options.getChannel('target');
       await db.guild.findOneAndUpdate({ guildID }, { videoChannel: `${channel}` });
-      await interaction.reply(`:white_check_mark: Video Channel set to ${channel} successfully!`);
+      const reply = await interaction.reply({ content: `Video Channel set to ${channel} successfully!`, fetchReply: true });
+      reply.react('✅');
 
     } else if (interaction.options.getSubcommand() === 'grace_period') {
 
       const duration = interaction.options.getString('duration');
       await db.guild.findOneAndUpdate({ guildID }, { videoGracePeriod: `${duration}` });
-      await interaction.reply(`:white_check_mark: Video Channel grace period duration set to ${duration} sec successfully!`);
+      const reply = await interaction.reply({ content: `Video Channel grace period duration set to ${duration} sec successfully!`, fetchReply: true });
+      reply.react('✅');
 
     } else if (interaction.options.getSubcommand() === 'auto_role') {
 
       const role = interaction.options.getRole('target');
       await db.guild.findOneAndUpdate({ guildID }, { autoRoles: `${role}` });
-      await interaction.reply(`:white_check_mark: Auto role set to ${role} successfully!`);
+      const reply = await interaction.reply({ content: `Auto role set to ${role} successfully!`, fetchReply: true });
+      reply.react('✅');
 
     } else if (interaction.options.getSubcommand() === 'mod_role') {
 
       const mod = interaction.options.getRole('target');
       await db.guild.findOneAndUpdate({ guildID }, { modRoles: `${mod}` });
-      await interaction.reply(`:white_check_mark: Moderator role set to ${mod} successfully!`);
+      const reply = await interaction.reply({ content: `Moderator role set to ${mod} successfully!`, fetchReply: true });
+      reply.react('✅');
 
     } else if (interaction.options.getSubcommand() === 'ban_role') {
 
       const ban = interaction.options.getRole('target');
       await db.guild.findOneAndUpdate({ guildID }, { banRoles: `${ban}` });
-      await interaction.reply(`:white_check_mark: Ban role set to ${ban} successfully!`);
+      const reply = await interaction.reply({ content: `Ban role set to ${ban} successfully!`, fetchReply: true });
+      reply.react('✅');
 
     }
   }

@@ -54,42 +54,50 @@ module.exports = {
     if (interaction.options.getSubcommand() === 'welcome_channel') {
 
       await db.guild.findOneAndUpdate({ guildID }, { welcomeChannel: `None` });
-      await interaction.reply(`:white_check_mark: Welcome channel removed successfully!`);
+      const reply = await interaction.reply({ content: `Welcome channel removed successfully!`, fetchReply: true });
+      reply.react('✅');
 
     } else if (interaction.options.getSubcommand() === 'notification_channel') {
 
       await db.guild.findOneAndUpdate({ guildID }, { notificationChannel: `None` });
-      await interaction.reply(`:white_check_mark: Notification channel removed successfully!`);
+      const reply = await interaction.reply({ content: `Notification channel removed successfully!`, fetchReply: true });
+      reply.react('✅');
 
     } else if (interaction.options.getSubcommand() === 'study_material_channel') {
 
       await db.guild.findOneAndUpdate({ guildID }, { studyMaterialChannel: `None` });
-      await interaction.reply(`:white_check_mark: Notes sharing channel removed successfully!`);
+      const reply = await interaction.reply({ content: `Notes sharing channel removed successfully!`, fetchReply: true });
+      reply.react('✅');
 
     } else if (interaction.options.getSubcommand() === 'video_channel') {
 
       await db.guild.findOneAndUpdate({ guildID }, { videoChannel: `None` });
-      await interaction.reply(`:white_check_mark: Video Channel removed successfully!`);
+      const reply = await interaction.reply({ content: `Video Channel removed successfully!`, fetchReply: true });
+      reply.react('✅');
 
     } else if (interaction.options.getSubcommand() === 'grace_period') {
 
       await db.guild.findOneAndUpdate({ guildID }, { videoGracePeriod: `300` });
-      await interaction.reply(`:white_check_mark: Video Channel grace period duration set to default successfully!`);
+      const reply = await interaction.reply({ content: `Video Channel grace period duration set to default successfully!`, fetchReply: true });
+      reply.react('✅');
 
     } else if (interaction.options.getSubcommand() === 'auto_role') {
 
       await db.guild.findOneAndUpdate({ guildID }, { autoRoles: `None` });
-      await interaction.reply(`:white_check_mark: Auto role removed successfully!`);
+      const reply = await interaction.reply({ content: `Auto role removed successfully!`, fetchReply: true });
+      reply.react('✅');
 
     } else if (interaction.options.getSubcommand() === 'mod_role') {
 
       await db.guild.findOneAndUpdate({ guildID }, { modRoles: `None` });
-      await interaction.reply(`:white_check_mark: Moderator role removed successfully!`);
+      const reply = await interaction.reply({ content: `Moderator role removed successfully!`, fetchReply: true });
+      reply.react('✅');
 
     } else if (interaction.options.getSubcommand() === 'ban_role') {
 
       await db.guild.findOneAndUpdate({ guildID }, { banRoles: `None` });
-      await interaction.reply(`:white_check_mark: Ban role removed successfully!`);
+      const reply = await interaction.reply({ content: `Ban role removed successfully!`, fetchReply: true });
+      reply.react('✅');
 
     }
   }
