@@ -167,7 +167,7 @@ module.exports = {
 
       setTimeout(async () => {
         await channel.send({
-          content: `**Hi ${guild.autoRoles}, Hope you enjoyed the session well! Here are your study materials from the session.\nIf you have any doubts or issues drop your query in the ${'#test'} channel :smiley:**`,
+          content: `**Hi ${guild.autoRoles}, Hope you enjoyed the session well! Here are your study materials from the session.\nIf you have any doubts or issues drop your query in the ${'<#1122190777750147213>'} channel :smiley:**`,
           embeds: [msg],
           files: [file]
         })
