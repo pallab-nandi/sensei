@@ -133,7 +133,18 @@ module.exports = {
 
       const time = new Date(yr, m - 1, dt, hr, min);
       const now = new Date(Date.now());
-      const schedule = time.getTime() - now.getTime();
+      const schedule = time.getTime() - now.getTime() - (330 * 60 * 1000);
+
+      const option = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric'
+      }
+
+      const calendar = time.toLocaleString('en-US', option);
 
       const file = new AttachmentBuilder(attachment.url);
 
@@ -151,7 +162,7 @@ module.exports = {
         .setThumbnail('https://img.freepik.com/free-vector/learning-concept-illustration_114360-6186.jpg')
         .setImage('https://tejasviclasses.in/wp-content/uploads/2022/03/trophy.gif')
 
-      const reply = await interaction.reply({ content: `Message is scheduled for ${time}.`, fetchReply: true });
+      const reply = await interaction.reply({ content: `Message is scheduled for ${calendar}.`, fetchReply: true });
       reply.react('✅');
 
       setTimeout(async () => {
