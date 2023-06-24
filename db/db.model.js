@@ -30,6 +30,9 @@ const guildSchema = new mongoose.Schema({
   notificationChannel: {
     type: String
   },
+  studyMaterialChannel: {
+    type: String
+  },
   createdAt: {
     type: Date,
     immutable: true,

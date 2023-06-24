@@ -31,6 +31,18 @@ module.exports = {
     )
     .addSubcommand(subcommand =>
       subcommand
+        .setName('study_material_channel')
+        .setDescription('Set your notes sharing default channel')
+        .addChannelOption(channel =>
+          channel
+            .setName('target')
+            .setDescription('Enter Channel you want to set as sharing study material')
+            .addChannelTypes(ChannelType.GuildText)
+            .setRequired(true)
+        )
+    )
+    .addSubcommand(subcommand =>
+      subcommand
         .setName('video_channel')
         .setDescription('Set your camera only default channel')
         .addChannelOption(channel =>
@@ -113,6 +125,12 @@ module.exports = {
       const channel = interaction.options.getChannel('target');
       await db.guild.findOneAndUpdate({ guildID }, { notificationChannel: `${channel}` });
       await interaction.reply(`:white_check_mark: Notification channel set to ${channel} successfully!`);
+
+    } else if (interaction.options.getSubcommand() === 'study_material_channel') {
+
+      const channel = interaction.options.getChannel('target');
+      await db.guild.findOneAndUpdate({ guildID }, { studyMaterialChannel: `${channel}` });
+      await interaction.reply(`:white_check_mark: Notes sharing channel set to ${channel} successfully!`);
 
     } else if (interaction.options.getSubcommand() === 'video_channel') {
 

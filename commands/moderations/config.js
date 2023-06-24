@@ -21,7 +21,7 @@ module.exports = {
       .setFields(
         { name: "Roles", value: `\`auto_role:\` ${guild.autoRoles}\n\`mod_role:\` ${guild.modRoles}\n\`ban_role:\` ${guild.banRoles}` },
         { name: "Video Channels", value: `\`video_channel:\` ${guild.videoChannel}\n\`grace_period:\` ${guild.videoGracePeriod}` },
-        { name: "Alert", value: `\`welcome_channel:\` ${guild.welcomeChannel}\n\`notification_channel:\` ${guild.notificationChannel}` }
+        { name: "Alert", value: `\`welcome_channel:\` ${guild.welcomeChannel}\n\`notification_channel:\` ${guild.notificationChannel}\n\`study-material_channel:\` ${guild.studyMaterialChannel}` }
       )
       .setImage("https://glitchii.github.io/embedbuilder/assets/media/banner.png")
       .setTimestamp();

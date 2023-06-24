@@ -17,7 +17,8 @@ module.exports = {
       videoChannel: 'None',
       videoGracePeriod: 'None',
       welcomeChannel: 'None',
-      notificationChannel: 'None'
+      notificationChannel: 'None',
+      studyMaterialChannel: 'None'
     })
   }
 }
