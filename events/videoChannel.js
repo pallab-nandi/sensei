@@ -52,9 +52,9 @@ module.exports = {
               member.user.send({ embeds: [thanksMsg] });
               return;
             }
-          }, 30 * 1000);
+          }, 60 * 1000);
         }
-      }, 30 * 1000);
+      }, gracePeriod * 1000);
     }
   }
 }

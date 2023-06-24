@@ -196,7 +196,18 @@ module.exports = {
 
       const time = new Date(yr, m - 1, dt, hr, min);
       const now = new Date(Date.now());
-      const schedule = time.getTime() - now.getTime();
+      const schedule = time.getTime() - now.getTime() - (330 * 60 * 1000);
+
+      const option = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric'
+      }
+
+      const calendar = time.toLocaleString('en-US', option);
 
       const msg = new EmbedBuilder()
         .setTitle(title)
@@ -212,7 +223,7 @@ module.exports = {
         .setThumbnail('https://cdni.iconscout.com/illustration/premium/thumb/clock-ticking-to-new-year-eve-6923431-5669296.png')
         .setImage(attachment.url)
 
-      const reply = await interaction.reply({ content: `Message is scheduled for ${time}.`, fetchReply: true });
+      const reply = await interaction.reply({ content: `Message is scheduled for ${calendar}.`, fetchReply: true });
       reply.react('✅');
 
       setTimeout(async () => {

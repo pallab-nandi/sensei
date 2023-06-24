@@ -35,7 +35,7 @@ module.exports = {
       .setFields(
         {
           name: "Student Name:",
-          value: `${member.user.username}`
+          value: `<@${memberId}>`
         },
         {
           name: "Course Name:",
