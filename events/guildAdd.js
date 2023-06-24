@@ -15,7 +15,7 @@ module.exports = {
       modRoles: 'None',
       banRoles: 'None',
       videoChannel: 'None',
-      videoGracePeriod: 'None',
+      videoGracePeriod: '300',
       welcomeChannel: 'None',
       notificationChannel: 'None',
       studyMaterialChannel: 'None'

@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, PermissionFlagsBits, EmbedBuilder, ChannelType } = require('discord.js');
+const { SlashCommandBuilder, PermissionFlagsBits, ChannelType } = require('discord.js');
 const { db } = require('../../db/db.model');
 
 module.exports = {
@@ -110,10 +110,8 @@ module.exports = {
 
   execute: async (interaction) => {
 
-    const guildID = interaction.guildId; //getting guild id
-    const guild = await db.guild.findOne({ guildID }); //getting guild details
+    const guildID = interaction.guildId; //getting guild iChannelTyped
 
-    //welcome channel setup
     if (interaction.options.getSubcommand() === 'welcome_channel') {
 
       const channel = interaction.options.getChannel('target');
